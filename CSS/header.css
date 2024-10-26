@@ -1,0 +1,95 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 3rem;
+    list-style: none;
+    background-color: #c3c8b1;
+}
+
+.inicioSesion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.enlaceMenu {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    font-style: normal;
+}
+
+.enlaceMenu:hover{
+    color: #000000;
+}
+
+#botonIniciarSesion {
+    width: 8rem;
+    height: 1.5rem;
+    background-color: #f0ceb5;
+    border-color: #ffffff;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+#logoHumtit {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+#usuario {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+#inicio {
+    background-image: url(/imagenes/bannerImage.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 35rem;
+    top: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#inicio h1{
+    font-size: 10rem;
+    margin-bottom: 0;
+    font-style: italic;
+    color: #ffffff;
+}
+
+#inicio h2 {
+    font-size: 5rem;
+    margin-left: 15rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #ffffff;
+}
+
+#inicio p {
+    font-size: 2rem;
+    margin-top: 0;
+    color: #ffffff;
+}
+

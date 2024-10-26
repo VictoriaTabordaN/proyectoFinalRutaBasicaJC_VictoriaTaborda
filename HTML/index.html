@@ -5,49 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUMTIT</title>
     <link rel="shortcut icon" href="/imagenes/Logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/CSS/header.css">
 </head>
 <body>
     <header>
+        
         <nav>
-            <ul class="menu">
-                <li>
-                    <img src="/imagenes/logoHumtit.jpg" alt="Logo del Emprendimiento.">
-                </li>
-                <li>
-                    <img src="/imagenes/usuario.png" alt="Imagen de Usuario">
-                    <a href="#usuario"></a>
-                    <button>Iniciar Sesión</button>
-                </li>
-                <li>
-                    <a href="#inicio">Inicio</a>
-                </li>
-                <li>
-                    <a href="#sobreMi">Sobre Mi</a>
-                </li>
-                <li>
-                    <a href="#productos">Productos</a>
-                </li>
-                <li>
-                    <a href="#reseñas">Reseñas</a>
-                </li>
-                <li>
-                    <a href="#contacto">Contacto</a>
-                </li>
-            </ul>
+            <div class="inicioSesion">
+                <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
+                <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
+                <a href="#usuario"></a>
+                <button id="botonIniciarSesion">Iniciar Sesión</button>
+            </div>
+            <div class="menu">
+                <a href="#inicio" class="enlaceMenu">Inicio</a>
+                <a href="#sobreMi" class="enlaceMenu">Sobre Mi</a>
+                <a href="#productos" class="enlaceMenu">Productos</a>
+                <a href="#reseñas" class="enlaceMenu">Reseñas</a>
+            </div>
         </nav>
 
-        <div id="inicio">
-            <h1>Humtit</h1>
-            <h2>Accesorios</h2>
-            <p>Nuestros accesorios se adaptan a todos los estilos y nesecidades.</p>
-        </div>
+        <section class="banner">
+            <div id="inicio">
+                <h1>Humtit</h1>
+                <h2>Accesorios</h2>
+                <p>Nuestros accesorios se adaptan a todos los estilos y necesidades.</p>
+            </div>
+        </section>
 
     </header>
 
     <section id="sobreMi">
         <div>
             <h2>Sobre Mi</h2>
-            <img src="/imagenes/sobreMiImagenSecundaria.jpg" alt="Segunda Imagen de la Seccion Sobre Mi">
+            
             <p>
                 Soy Fabiana Dueña emprendedora de Humtit hace 4 años, apasionada por la moda, mi misión es ofrecer accesorios que te acompañen cada dia con estilo y comodidad. <br>
                 Nos enfocamos en ofrecerte productos de calidad en acero quirúrgico y enchapados que destacan por su durabilidad y estilo. <br>
@@ -58,13 +49,47 @@
 
     <section id="productos">
 
-        <div>
+        <div id="contenedorAnillos">
             <img src="/imagenes/portadaAnillos.jpg" alt="Portada Categoria Anillos">
             <h3>Anillos</h3>
             <button id="anillos" class="botonCategoria">Ver Más</button>
         </div>
 
+        <div id="contenedorCaravanas">
+            <img src="/imagenes/portadaCaravanas.jpg" alt="Portada Categoria Caravanas">
+            <h3>Caravanas</h3>
+            <button id="caravanas" class="botonCategoria">Ver Más</button>
+        </div>
+
+        <div id="contenedorCollares">
+            <img src="/imagenes/portadaCollares.jpg" alt="Portada Categoria Collares">
+            <h3>Collares</h3>
+            <button id="collares" class="botonCategoria">Ver Más</button>
+        </div>
+
     </section>
 
+    <section id="reseñas">
+
+    </section>
+
+    <section id="contacto">
+
+        <div>
+
+            <a href="https://www.instagram.com/humtit_accesorios/"></a>
+        </div>
+
+        <div>
+            <a href="https://www.facebook.com/humtit.rm.1"></a>
+        </div>
+        
+        <div>
+            <a href=""></a>
+        </div>
+
+    </section>
+
+    <script src="/script.js"></script>
 </body>
 </html>
