@@ -1,0 +1,43 @@
+#sesionReseñas {
+    background-color: #dbafa5;
+    width: 100vw;
+    height: 100vh;
+}
+
+#tituloReseñas{
+    background-color: #a5aa93;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5rem;
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+#reseñaCliente {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 5rem;
+    box-sizing: border-box;
+}
+
+#reseñaCliente div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 20rem;
+    height: 20rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#reseñaCliente p{
+    font-size: 1.2rem;
+    color: #a5aa93;
+}
+

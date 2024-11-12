@@ -10,7 +10,7 @@ nav{
     list-style: none;
     background-color: #c3c8b1;
     margin-left: -0.5rem;
-    
+    z-index: 100;
 }
 
 .inicioSesion {
@@ -58,6 +58,7 @@ nav{
     width: 2rem;
     height: 2rem;
     border-radius: 100%;
+    
 }
 
 
