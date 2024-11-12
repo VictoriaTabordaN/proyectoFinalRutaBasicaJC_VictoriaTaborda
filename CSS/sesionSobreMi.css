@@ -1,0 +1,59 @@
+#sobreMi {
+    display: flex;
+    align-items: center;
+    background-color: #f0ceb5;
+    width: 100vw;
+    height: 40rem;
+    margin-left: -0.5rem;
+    line-height: 2rem;
+}
+
+#sobreMi p {
+    font-size: 2rem;
+    color: #ffffff;
+    padding-left: 15rem;
+    padding-right: 2rem;
+}
+
+#sobreMi h2 {
+    font-size: 5rem;
+    color: #ffffff;
+    margin-top: -2rem;
+    padding-left: 10rem;
+    text-align: center;
+}
+
+#local {
+    position: relative;
+    padding-left: 5rem;
+}
+
+#local img {
+    border-bottom-left-radius: 20rem;
+    border-bottom-right-radius: 20rem;
+    height: 30rem;
+    width: 20rem;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+#imagenDueña {
+    position: absolute;
+    padding-bottom: 15rem;
+    padding-left: 20rem;
+}
+
+#imagenDueña img {
+    border-top-left-radius: 20rem;
+    border-top-right-radius: 20rem;
+    height: 20rem;
+    width: 15rem;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+
+
+
