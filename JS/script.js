@@ -73,6 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const usuarioEncontrado = usuarios.find(
             usuario => usuario.Correo === correo && usuario.Contraseña === contraseña
         );
+        if (usuarioEncontrado) {
+            obtenerUsuarios();
+        }
     }
 
     
