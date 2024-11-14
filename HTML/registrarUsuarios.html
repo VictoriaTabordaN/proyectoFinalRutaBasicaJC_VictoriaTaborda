@@ -1,27 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=r">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registrar Usuarios-HUMTIT</title>
+    <link rel="shortcut icon" href="/imagenes/iconoLogo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/CSS/registrarUsuarios.css">
 </head>
 <body>
-    <form action="registrarUsuario">
+
+    <nav>
+        <div class="inicioSesion">
+            <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
+        </div>
+        <div class="menu">
+            <a href="/HTML/index.html#inicio" class="enlaceMenu">Inicio</a>
+            <a href="/HTML/index.html#sobreMi" class="enlaceMenu">Sobre Mi</a>
+            <a href="/HTML/index.html#productos" class="enlaceMenu">Productos</a>
+            <a href="/HTML/index.html#sesionReseñas" class="enlaceMenu">Reseñas</a>
+            <a href="#contacto" class="enlaceMenu">Contacto</a>
+        </div>
+    </nav>
+
+    <form id="formularioRegistro">
+        <fieldset>
 
         <h1>Registro de Usuario.</h1>
 
-        <label for="name">Ingresa tu nombre:</label>
-        <input type="text" name="Nombre" id="nombreDeUsuario" required>
+        <input type="text" name="Nombre" placeholder="Ingrese su nombre" id="nombreUsuario" required>
 
-        <label for="lastName">Ingresa tu apellido:</label>
-        <input type="text" name="Apellido" id="apellidoDeUsuario">
+        <input type="text" name="Apellido" placeholder="Ingrese su apellido" id="apellidoUsuario">
+
+        <input type="text" name="genero" placeholder="Ingrese su genero" id="generoUsuario">
         
-        <label for="email">Ingresa tu correo Electronico:</label>
-        <input type="email" name="Correo" id="correoDeUsuario" required>
+        <input type="email" name="Correo" placeholder="Ingrese su correo electronico" id="correoUsuario" required>
 
-        <label for="password">Ingresa una contraseña::</label>
-        <input type="password" name="contraseña" id="contraseñaDeUsuario" required>
+        <input type="password" name="contraseña" placeholder="Ingrese una contraseña" id="contraseñaUsuario" required>
 
-        <button>Registrar</button>
+        <button id="botonRegistrar" onclick="almacenarDatos()">Registrar</button>
+
+        </fieldset>
+    </form>
+
+    <script src="/JS/script.js"></script>
 </body>
 </html>

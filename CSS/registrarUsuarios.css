@@ -1,0 +1,54 @@
+@import url(/CSS/menuDeNavegacion.css);
+
+body {
+    background-color: #f0ceb5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+fieldset {
+    background-color: #ffffff;
+    border-radius: 2rem;
+    width: 25rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    padding-top: 5rem;
+    border: none;
+}
+
+h1 {
+    position: absolute;
+    margin-top: -80%;
+    font-size: 2.5rem;
+    color: #dbafa5;
+}
+
+input {
+    background-color: #c3c8b1;
+    border: none;
+    width: 20rem;
+    height: 2rem;
+    color: #ffffff;
+}
+
+input:placeholder-shown {
+    color: #ffffff;
+    border: none;
+}
+
+button {
+    background-color: #dbafa5;
+    border: none;
+    height: 2rem;
+    width: 5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: #ffffff;
+}
