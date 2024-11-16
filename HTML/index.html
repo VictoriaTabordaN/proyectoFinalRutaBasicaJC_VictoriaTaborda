@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HUMTIT</title>
     <link rel="shortcut icon" href="/imagenes/iconoLogo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/CSS/menuDeNavegacion.css">
-    <link rel="stylesheet" href="/CSS/sesionSobreMi.css">
-    <link rel="stylesheet" href="/CSS/sesionProductos.css">
-    <link rel="stylesheet" href="/CSS/banner.css">
-    <link rel="stylesheet" href="/CSS/sesionReseñas.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    
 </head>
 <body>
     <header>
+        <div class="inicioSesion">
+            <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
+            <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
+            <a href="#usuario"></a>
+            <button id="botonIniciarSesion"><a href="ingresarUsuarios.html">Iniciar Sesión</a></button>
+            <button id="botonRegistro"><a href="registrarUsuarios.html">Registrar Usuario</a></button>
+            <div id="infoUsuario"></div>
+            <button id="abrirMenu">Abrir Menú</button>
+        </div>
         
-        <nav>
-            <div class="inicioSesion">
-                <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
-                <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
-                <a href="#usuario"></a>
-                <button id="botonIniciarSesion">Iniciar Sesión</button>
-            </div>
+        <nav id="nav">
             <div class="menu">
                 <a href="#inicio" class="enlaceMenu">Inicio</a>
                 <a href="#sobreMi" class="enlaceMenu">Sobre Mi</a>
                 <a href="#productos" class="enlaceMenu">Productos</a>
                 <a href="#sesionReseñas" class="enlaceMenu">Reseñas</a>
+                <a href="#contacto" class="enlaceMenu">Contacto</a>
             </div>
+            <button id="cerrarMenu">Cerrar Menú</button>
         </nav>
 
         <div id="inicio">
@@ -35,16 +37,9 @@
             <p>Nuestros accesorios se adaptan a todos los estilos y necesidades.</p>
         </div>
         
-
     </header>
 
     <section id="sobreMi">
-        <div id="local">
-            <img src="/imagenes/localHumtit.jpg" alt="Imagen del local.">
-        </div>
-        <div id="imagenDueña">
-            <img src="/imagenes/dueñaEmprendimiento.jpg" alt="Imagen de la dueña del emprendimiento">
-        </div>
         <div id="informacionSobreMi">
             <h2>Sobre Mi</h2>
             <p>
@@ -53,6 +48,13 @@
                 Nuestros productos son hipoalergénico, perfectos para pieles sensibles, y para quienes aman la moda, cada elección que hacemos está pensada para acompañarte en cada momento sin perder su brillo ni estilo.
             </p>
         </div>
+        <div id="local">
+            <img src="/imagenes/localHumtit.jpg" alt="Imagen del local.">
+        </div>
+        <div id="imagenDueña">
+            <img src="/imagenes/dueñaEmprendimiento.jpg" alt="Imagen de la dueña del emprendimiento">
+        </div>
+        
     </section>
 
     <section id="productos">
@@ -64,22 +66,19 @@
                 <div id="portadaAnillos">
                     <img src="/imagenes/portadaAnillos.jpg" alt="Portada Categoria Anillos">
                     <h3>Anillos</h3>
-                    <button id="botonAnillos" class="botonCategoria" onclick="mostrarAnillos();">Ver Anillos</button>
+                    <button id="botonAnillos" class="botonCategoria"><a href="sesionAnillos.html">Ver Anillos</a></button>
                 </div>
 
-        
-                
                 <div id="portadaCaravanas">
                     <img src="/imagenes/portadaCaravanas.jpg" alt="Portada Categoria Caravanas">
                     <h3>Caravanas</h3>
-                    <button id="botonCaravanas" class="botonCategoria" onclick="mostrarCaravanas();">Ver caravanas</button>
+                    <button id="botonCaravanas" class="botonCategoria"><a href="sesionCaravanas.html">Ver caravanas</a></button>
                 </div>
                
-            
                 <div id="portadaCollares">
                     <img src="/imagenes/portadaCollares.jpg" alt="Portada Categoria Collares">
                     <h3>Collares</h3>
-                    <button id="collares" class="botonCategoria" onclick="mostrarCollares()">Ver Collares</button>
+                    <button id="collares" class="botonCategoria"><a href="sesionCollares.html">Ver Collares</a></button>
                 </div>
             
         </div>
@@ -107,23 +106,21 @@
         </div>
     </section>
 
-    <section id="contacto">
-
+    <footer id="contacto">
         <div>
 
-            <a href="https://www.instagram.com/humtit_accesorios/"></a>
+            <a href="https://www.instagram.com/humtit_accesorios/"><img src="/imagenes/logoInstagram.webp" alt="Logo instagram"></a>
         </div>
 
         <div>
-            <a href="https://www.facebook.com/humtit.rm.1"></a>
+            <a href="https://www.facebook.com/humtit.rm.1"><img src="/imagenes/iconoFacebook.avif" alt="Logo facebook"></a>
         </div>
         
         <div>
-            <a href=""></a>
+            <a href="https://wa.me/59898144531"><img src="/imagenes/logoWhatsapp.jpg" alt="Logo logoWhatsapp"></a>
         </div>
-
-    </section>
-
+    </footer>
+        
     <script src="/JS/script.js"></script>
 </body>
 </html>

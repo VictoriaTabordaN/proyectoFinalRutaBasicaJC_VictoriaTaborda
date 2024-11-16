@@ -11,7 +11,9 @@
     top: 2rem;
     font-family: 'Times New Roman', Times, serif;
     margin-left: -0.5rem;
-}
+} 
+
+
 
 #inicio h1{
     font-size: 10rem;
@@ -33,3 +35,26 @@
     margin-top: 0;
     color: #ffffff;
 }
+
+@media screen and (max-width: 480px){
+    
+    #inicio {
+        height: 20rem;
+        padding-right: 1rem;
+    }
+    #inicio h1{
+        font-size: 5rem;
+        margin-right: 3rem;
+        
+    }
+    #inicio h2 {
+        font-size: 2.5rem;
+        margin-left: 5rem;
+    }
+    #inicio p {
+        margin-right: 3rem;
+        margin-right: 1.5rem;
+        font-size: 0.8rem;
+    }
+}
+

@@ -1,10 +1,12 @@
 .categoria {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    background-color: #f0ceb5;
+    background-color: #f3dbb2;
     width: 100vw;
     height: 100%;
-    margin-left: -1rem;
+    margin-left: -0.5rem;
     margin-top: -1rem;
     padding-top: 3.5rem;
 }
@@ -23,8 +25,6 @@
 }
 .productos {
     background-color: #a5aa93;
-    align-items: center;
-    justify-content: flex-start;
     border-top-left-radius: 20rem;
     border-top-right-radius: 20rem;
     overflow: hidden;
@@ -43,9 +43,15 @@
     border-top-right-radius: 20rem;
 }
 
+img{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .elementosProductos {
     list-style: none;
-    margin-top: -2rem;   
+    
     padding-right: 2rem;
     line-height: 1rem;
 }
@@ -60,4 +66,34 @@
     font-size: 1.5rem;
     color: #ffffff;
     line-height: 2rem;
+}
+
+@media screen and (max-width: 480px){
+    .tituloCategoria{
+        margin-left: 0;
+    }
+     .tituloCategoria h1 {
+        font-size: 2rem;
+    }
+    .productos {
+        width: 25rem;
+        height: 35rem;
+        gap: 0;
+    }
+    .imagenProducto {
+        width: 20rem;
+        height: 20rem;
+        border-top-left-radius: 25rem;
+        border-top-right-radius: 25rem;
+    }
+    .elementosProductos{
+        margin-bottom: 2rem;
+    }
+    .elementosProductos h4{
+        font-size: 1.5rem;
+    }
+    .elementosProductos p{
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
 }
