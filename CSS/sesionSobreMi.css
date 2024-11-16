@@ -42,14 +42,14 @@
 #imagenDueña {
     position: absolute;
     padding-bottom: 20rem;
-    padding-left: 45rem;
+    padding-left: 50rem;
 }
 
 #imagenDueña img {
     border-top-left-radius: 20rem;
     border-top-right-radius: 20rem;
     height: 20rem;
-    width: 15rem;
+    width: 12rem;
     object-fit: cover;
     z-index: 1;
 }

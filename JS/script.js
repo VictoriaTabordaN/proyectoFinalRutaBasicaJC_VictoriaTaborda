@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const botonRegistrar = document.getElementById("botonRegistrar");
     const botonIniciarSesion = document.getElementById("botonInicioSesion");
-    
-    // Función para registrar usuarios y almacenarlos en local storage. 
+
+    // Función para registrar usuarios y almacenarlos en local storage.
     const almacenarDatos = () => {
         // Capturar los datos obtenidos en los inputs
         const nombre = document.getElementById("nombreUsuario").value.trim();
@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Redirige a la página de inicio de sesión
         window.location.href = 'ingresarUsuarios.html';
     };
+
+   
 
     // Función para iniciar sesión
     const iniciarSesion = () => {
@@ -63,9 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Función para mostrar los datos del usuario en index.html
     const mostrarDatosUsuario = () => {
         const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+        const botonInicio = document.getElementById('botonIniciarSesion');
+        const botonRegistro = document.getElementById('botonRegistro');
 
         if (usuarioActual) {
             const divInfoUsuario = document.getElementById("infoUsuario");
+            
+            botonInicio.style.display = 'none';
+            botonRegistro.style.display = 'none';
 
             // Mostrar la información del usuario
             divInfoUsuario.innerHTML = `
@@ -76,23 +83,24 @@ document.addEventListener("DOMContentLoaded", () => {
             // Agregar el evento de cerrar sesión
             const botonCerrarSesion = document.getElementById('botonCerrarSesion');
             if (botonCerrarSesion) {
-                botonCerrarSesion.addEventListener('click', () => cerrarSesion());
+                botonCerrarSesion.addEventListener('click', cerrarSesion);
             }
         }
-        else {
-            console.log("No hay usuario autenticado.");
-        }
+        
+    };
+
+    // Función para cerrar sesión
+    const cerrarSesion = () => {
+        localStorage.removeItem('usuarioActual');
+        window.location.href = (ingresarUsuarios.html)
+        
     };
 
     // Llamar la función para mostrar los datos del usuario en index.html
     mostrarDatosUsuario();
 });
 
-// Función para cerrar sesión
-function cerrarSesion() {
-    localStorage.removeItem('usuarioActual');
-}
-
+// Funcionalidad para el menú desplegable
 const nav = document.getElementById("nav");
 const abrir = document.getElementById("abrirMenu");
 const cerrar = document.getElementById("cerrarMenu");
@@ -100,11 +108,9 @@ const cerrar = document.getElementById("cerrarMenu");
 abrir.addEventListener('click', () => {
     nav.classList.add("visible");
     abrir.style.display = 'none';
-})
+});
 
 cerrar.addEventListener('click', () => {
     nav.classList.remove("visible");
     abrir.style.display = 'block';
-})
-
-
+});

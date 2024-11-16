@@ -10,18 +10,23 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="inicioSesion">
-                <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
-                <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
-                <a href="#usuario"></a>
-                <button id="botonIniciarSesion">Iniciar Sesión</button>
-            </div>
+        <div class="inicioSesion">
+            <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
+            <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
+            <a href="#usuario"></a>
+            <button id="botonInicioSesion">Iniciar Sesión</button>
+            <button id="botonRegistro"><a href="registrarUsuarios.html">Registrar Usuario</a></button>
+            <div id="infoUsuario"></div>
+            <button id="abrirMenu">Abrir Menú</button>
+        </div>
+        <nav id="nav">
             <div class="menu">
                 <a href="/HTML/index.html#inicio" class="enlaceMenu">Inicio</a>
                 <a href="/HTML/index.html#sobreMi" class="enlaceMenu">Sobre Mi</a>
                 <a href="/HTML/index.html#productos" class="enlaceMenu">Productos</a>
                 <a href="/HTML/index.html#reseñas" class="enlaceMenu">Reseñas</a>
+                <a href="/HTML/index.html#contacto" class="enlaceMenu">Contacto</a>
+                <button id="cerrarMenu">Cerrar Menú</button>
             </div>
         </nav>
     </header>
@@ -92,9 +97,7 @@
                 </li>
             </ul> 
         </div>
-
-        
-
-    </section>
+     </section>
+    <script src="/JS/script.js"></script>
 </body>
 </html>
