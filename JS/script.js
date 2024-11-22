@@ -2,6 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const botonRegistrar = document.getElementById("botonRegistrar");
     const botonIniciarSesion = document.getElementById("botonInicioSesion");
 
+    //Crear usuario administadrador
+    const crearAdmin = () => {
+        const correoAdmin = 'vic@gmail.com'
+        const contraseñaAdmin = '123Vic'
+
+        const adminGuardado = JSON.parse(localStorage.getItem("userAdmin"));
+        if (!adminGuardado) {
+            const admin = {
+                "Correo": correoAdmin,
+                "Contraseña": contraseñaAdmin,
+            };
+            localStorage.setItem("userAdmin", JSON.stringify(admin));
+        }
+    }
+
+    crearAdmin();
+
     // Función para registrar usuarios y almacenarlos en local storage.
     const almacenarDatos = () => {
         // Capturar los datos obtenidos en los inputs
@@ -21,13 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
             "Contraseña": contraseña
         };
 
-        // Guardar los datos en el local storage
+        //Crear arreglo para gestionar los usuarios y añadirlos a localstorage
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        usuarios.push(usuario);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-        // Redirige a la página de inicio de sesión
-        window.location.href = 'ingresarUsuarios.html';
+        
+        //Verificar si el usuario existe 
+        const usuarioExiste = usuarios.find((usuario) => usuario.Correo === correo);
+        if (usuarioExiste) {
+            alert("El correo ingresado corresponde a una cuenta existente, ingrese otro correo porfavor.");
+        }
+        // Guardar los datos en el local storage
+        else {
+            usuarios.push(usuario);
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            alert('Registro de usuario exitoso')
+            // Redirige a la página de inicio de sesión
+            window.location.href = 'ingresarUsuarios.html';
+        }
     };
 
    
@@ -36,24 +62,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const iniciarSesion = () => {
         const correo = document.getElementById("correoUsuario").value.trim();
         const contraseña = document.getElementById("contraseñaUsuario").value;
+
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        let admin = JSON.parse(localStorage.getItem("userAdmin"))
+
+        if (admin && admin.Correo === correo && admin.Contraseña === contraseña){
+            alert('Inicio de admnistrador exitoso')
+            window.location.href = 'publicarArticulos.html';
+        }
 
         // Buscar al usuario en el local storage
         const usuarioEncontrado = usuarios.find(
-            usuario => usuario.Correo === correo && usuario.Contraseña === contraseña
+            usuario => usuario.Correo === correoAdmin && usuario.Contraseña === contraseña
         );
 
-        // Si se encuentra el usuario, lo guarda como usuarioActual
+        // Si se encuentra el usuario, lo guarda.
+        
         if (usuarioEncontrado) {
-            localStorage.setItem("usuarioActual", JSON.stringify(usuarioEncontrado));
-            console.log('Inicio de sesión exitoso.');
-            window.location.href = 'index.html';
+            localStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioEncontrado));
+            alert('Inicio de sesión exitoso.');
+            window.location.href = '../index.html';
         } else {
-            console.log("Usuario o contraseña incorrectos");
+            alert("Usuario o contraseña incorrectos");
         }
     };
 
-    // Agregar los eventos a los botones
+    // Verificar si los botones existen en la página actual y añadirles un evento
     if (botonIniciarSesion) {
         botonIniciarSesion.addEventListener("click", iniciarSesion);
     }
@@ -64,11 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para mostrar los datos del usuario en index.html
     const mostrarDatosUsuario = () => {
-        const usuarioActual = JSON.parse(localStorage.getItem('usuarioActual'));
+        const usuarioRegistrado = JSON.parse(localStorage.getItem('usuarioRegistrado'));
         const botonInicio = document.getElementById('botonIniciarSesion');
         const botonRegistro = document.getElementById('botonRegistro');
 
-        if (usuarioActual) {
+        if (usuarioRegistrado) {
             const divInfoUsuario = document.getElementById("infoUsuario");
             
             botonInicio.style.display = 'none';
@@ -76,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Mostrar la información del usuario
             divInfoUsuario.innerHTML = `
-                <p>${usuarioActual.Nombre}</p>
+                <p>${usuarioRegistrado.Nombre}</p>
                 <button id="botonCerrarSesion">Cerrar sesión</button>
             `;
 
@@ -91,26 +125,135 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Función para cerrar sesión
     const cerrarSesion = () => {
-        localStorage.removeItem('usuarioActual');
-        window.location.href = (ingresarUsuarios.html)
+        const botonInicio = document.getElementById('botonIniciarSesion');
+        const botonRegistro = document.getElementById('botonRegistro');
         
+        localStorage.removeItem('usuarioRegistrado');
+        window.location.reload();
+        
+        botonInicio.style.display = 'block';
+        botonRegistro.style.display = 'block';
+        cerrarSesion.style.display = 'none';
+    
     };
 
-    // Llamar la función para mostrar los datos del usuario en index.html
+    
     mostrarDatosUsuario();
+    
 });
 
 // Funcionalidad para el menú desplegable
-const nav = document.getElementById("nav");
-const abrir = document.getElementById("abrirMenu");
-const cerrar = document.getElementById("cerrarMenu");
+function desplegarMenu () {
+    const nav = document.getElementById("nav");
+    const abrir = document.getElementById("abrirMenu");
+    const cerrar = document.getElementById("cerrarMenu");
 
-abrir.addEventListener('click', () => {
-    nav.classList.add("visible");
-    abrir.style.display = 'none';
-});
+    if(abrir){
+        abrir.addEventListener('click', () => {
+            nav.classList.add("visible");
+            abrir.style.display = 'none';
+        });
+    }
 
-cerrar.addEventListener('click', () => {
-    nav.classList.remove("visible");
-    abrir.style.display = 'block';
-});
+    if(cerrar){
+        cerrar.addEventListener('click', () => {
+            nav.classList.remove("visible");
+            abrir.style.display = 'block';
+        });
+    }
+        
+}
+desplegarMenu()
+
+
+
+// Función para subir productos 
+function subirProductos (){
+
+    const getProductosPorCategoria = (categoria) => {
+        return JSON.parse(localStorage.getItem(`productos${categoria}`)) || [];
+    };
+    
+    const guardarProductoPorCategoria = (categoria, producto) => {
+        const productos = getProductosPorCategoria(categoria);
+        productos.push(producto);
+        localStorage.setItem(`productos${categoria}`, JSON.stringify(productos));
+    };
+
+    const añadirProducto = document.getElementById("botonAñadirProducto");
+    
+    if (añadirProducto){
+    añadirProducto.addEventListener('click', () => {
+        
+            const nombre = document.getElementById("nombreProducto").value.trim();
+            const precio = document.getElementById("precioProducto").value.trim();
+            const descripcion = document.getElementById("descripcionProducto").value.trim();
+            const categoria = document.getElementById("categoriaProducto").value.trim();
+            const imagen = document.getElementById("subirImagen"); // Referencia al input de la imagen
+        
+            
+            const file = imagen.files[0];
+            
+            // Crear un lector de archivos
+            const reader = new FileReader();
+        
+            reader.onload = (e) => {
+                // Crear el objeto del producto con la imagen en base64
+                const producto = {
+                    "Nombre": nombre,
+                    "Precio": precio,
+                    "Descripcion": descripcion,
+                    "Categoria": categoria,
+                    "Imagen": e.target.result, 
+                };
+        
+                // Validar la categoría y guardar el producto
+                if (["Anillos", "Caravanas", "Collares"].includes(categoria)) {
+                    guardarProductoPorCategoria(categoria, producto);
+                    alert(`Producto añadido a la categoría ${categoria}`);
+                } else {
+                    alert("Categoría no válida. Usa Anillos, Caravanas o Collares.");
+                }
+            };
+        
+            
+            reader.readAsDataURL(file);
+        
+    }) }
+
+    //Función para añadir productos desde usuario administrador.
+    const cargarProductos = () => {
+        const paginaActual = window.location.pathname;
+        let categoria = "";
+    
+        if (paginaActual.includes("sesionAnillos.html")) categoria = "Anillos";
+        else if (paginaActual.includes("sesionCaravanas.html")) categoria = "Caravanas";
+        else if (paginaActual.includes("sesionCollares.html")) categoria = "Collares";
+    
+        if (categoria) {
+            const productos = getProductosPorCategoria(categoria);
+            const seccion = document.querySelector(".categoria");
+            
+            productos.forEach(producto => {
+                const productoHTML = `
+                    <div class="productos">
+                        <img src="${producto.Imagen}" class="imagenProducto">
+                        <div class="elementosProductos">
+                            <h4>${producto.Nombre}</h4>
+                            <p><b>${producto.Precio}</b></p>
+                            <p>${producto.Descripcion}</p>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                `;
+                seccion.insertAdjacentHTML("beforeend", productoHTML);
+            })
+            
+            console.log(categoria, productos);
+    }; }
+    cargarProductos()
+}
+
+subirProductos()
+
+

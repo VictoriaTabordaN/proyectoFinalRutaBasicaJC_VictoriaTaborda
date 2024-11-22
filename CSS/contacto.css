@@ -1,13 +1,12 @@
 #contacto {
     background-color: #c3c8b1;
-    width: 100vw;
-    height: 3rem;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center; 
     gap: 1rem;
     position: static;
-    margin-left: -0.5rem;
 }
 
 #contacto img{

@@ -5,3 +5,9 @@
 @import url(categoriaProductos.css);
 @import url(sesionReseñas.css);
 @import url(contacto.css);
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
