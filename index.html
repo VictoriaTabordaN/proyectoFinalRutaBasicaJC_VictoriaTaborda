@@ -11,15 +11,13 @@
     <header>
         <div class="inicioSesion">
             <img src="/imagenes/Logo.ico" alt="Logo del Emprendimiento." id="logoHumtit">
-            <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="usuario">
-            <a href="#usuario"></a>
+            <img src="/imagenes/usuario.png" alt="Imagen de Usuario" id="imagenUsuario">
             <button id="botonIniciarSesion"><a href="/HTML/ingresarUsuarios.html">Iniciar Sesión</a></button>
             <button id="botonRegistro"><a href="/HTML/registrarUsuarios.html">Registrar Usuario</a></button>
-            <div id="infoUsuario"></div>
+            <div id="infoUsuario"><!-- Aquí va el nombre de usuario y un botón para cerrar sesión --></div>
             <button id="abrirMenu">Abrir Menú</button>
         </div>
         <nav id="nav">
-            
             <div class="menu">
                 <a href="#inicio" class="enlaceMenu">Inicio</a>
                 <a href="#sobreMi" class="enlaceMenu">Sobre Mi</a>
@@ -41,12 +39,12 @@
         <div id="informacionSobreMi">
             <h2>Sobre Mi</h2>
             <p>
-                Soy Fabiana Dueña emprendedora de Humtit hace 4 años, apasionada por la moda, mi misión es ofrecer accesorios que te acompañen cada dia con estilo y comodidad. <br>
+                Soy Fabiana dueña emprendedora de Humtit hace 4 años, apasionada por la moda. Mi misión es ofrecer accesorios que te acompañen cada dia con estilo y comodidad. <br>
                 Nos enfocamos en ofrecerte productos de calidad en acero quirúrgico y enchapados que destacan por su durabilidad y estilo. <br>
-                Nuestros productos son hipoalergénico, perfectos para pieles sensibles, y para quienes aman la moda, cada elección que hacemos está pensada para acompañarte en cada momento sin perder su brillo ni estilo.
+                Nuestros productos son hipoalergénicos, perfectos para pieles sensibles, y para quienes aman la moda, cada elección que hacemos está pensada para acompañarte en cada momento sin perder su brillo ni estilo.
             </p>
         </div>
-        <div id="local">
+        <div id="imagenLocal">
             <img src="/imagenes/localHumtit.jpg" alt="Imagen del local.">
         </div>
         <div id="imagenDueña">
@@ -59,24 +57,25 @@
         <div id="tituloProductos">
             <h2>Nuestros Productos</h2>
         </div>
+        
         <div class="categoriaDeProductos">
                 
                 <div id="portadaAnillos">
                     <img src="/imagenes/portadaAnillos.jpg" alt="Portada Categoria Anillos">
                     <h3>Anillos</h3>
-                    <button id="botonAnillos" class="botonCategoria"><a href="/HTML/sesionAnillos.html">Ver Anillos</a></button>
+                    <button class="botonCategoria"><a href="/HTML/sesionAnillos.html">Ver Anillos</a></button>
                 </div>
 
                 <div id="portadaCaravanas">
                     <img src="/imagenes/portadaCaravanas.jpg" alt="Portada Categoria Caravanas">
                     <h3>Caravanas</h3>
-                    <button id="botonCaravanas" class="botonCategoria"><a href="/HTML/sesionCaravanas.html">Ver caravanas</a></button>
+                    <button class="botonCategoria"><a href="/HTML/sesionCaravanas.html">Ver Caravanas</a></button>
                 </div>
                
                 <div id="portadaCollares">
                     <img src="/imagenes/portadaCollares.jpg" alt="Portada Categoria Collares">
                     <h3>Collares</h3>
-                    <button id="collares" class="botonCategoria"><a href="/HTML/sesionCollares.html">Ver Collares</a></button>
+                    <button class="botonCategoria"><a href="/HTML/sesionCollares.html">Ver Collares</a></button>
                 </div>
             
         </div>

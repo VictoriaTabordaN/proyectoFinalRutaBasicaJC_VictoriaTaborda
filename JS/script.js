@@ -51,14 +51,14 @@ document.addEventListener("DOMContentLoaded", () => {
             usuarios.push(usuario);
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
             alert('Registro de usuario exitoso')
+            console.log(usuarios)
             // Redirige a la página de inicio de sesión
             window.location.href = 'ingresarUsuarios.html';
         }
     };
+    
 
-   
-
-    // Función para iniciar sesión
+   // Función para iniciar sesión
     const iniciarSesion = () => {
         const correo = document.getElementById("correoUsuario").value.trim();
         const contraseña = document.getElementById("contraseñaUsuario").value;
@@ -73,14 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Buscar al usuario en el local storage
         const usuarioEncontrado = usuarios.find(
-            usuario => usuario.Correo === correoAdmin && usuario.Contraseña === contraseña
+            usuario => usuario.Correo === correo && usuario.Contraseña === contraseña
         );
 
         // Si se encuentra el usuario, lo guarda.
         
-        if (usuarioEncontrado) {
+        if (usuarioEncontrado && usuarioEncontrado !== admin) {
             localStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioEncontrado));
             alert('Inicio de sesión exitoso.');
+            console.log(usuarios)
             window.location.href = '../index.html';
         } else {
             alert("Usuario o contraseña incorrectos");
@@ -96,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         botonRegistrar.addEventListener("click", almacenarDatos);
     }
 
-    // Función para mostrar los datos del usuario en index.html
+    // Función para mostrar los datos del usuario en la pagina principal
     const mostrarDatosUsuario = () => {
         const usuarioRegistrado = JSON.parse(localStorage.getItem('usuarioRegistrado'));
         const botonInicio = document.getElementById('botonIniciarSesion');
@@ -165,8 +166,6 @@ function desplegarMenu () {
 }
 desplegarMenu()
 
-
-
 // Función para subir productos 
 function subirProductos (){
 
@@ -189,7 +188,7 @@ function subirProductos (){
             const precio = document.getElementById("precioProducto").value.trim();
             const descripcion = document.getElementById("descripcionProducto").value.trim();
             const categoria = document.getElementById("categoriaProducto").value.trim();
-            const imagen = document.getElementById("subirImagen"); // Referencia al input de la imagen
+            const imagen = document.getElementById("subirImagen");
         
             
             const file = imagen.files[0];
@@ -200,6 +199,7 @@ function subirProductos (){
             reader.onload = (e) => {
                 // Crear el objeto del producto con la imagen en base64
                 const producto = {
+                    "ID": Date.now(),
                     "Nombre": nombre,
                     "Precio": precio,
                     "Descripcion": descripcion,
@@ -211,6 +211,7 @@ function subirProductos (){
                 if (["Anillos", "Caravanas", "Collares"].includes(categoria)) {
                     guardarProductoPorCategoria(categoria, producto);
                     alert(`Producto añadido a la categoría ${categoria}`);
+                    console.log(producto)
                 } else {
                     alert("Categoría no válida. Usa Anillos, Caravanas o Collares.");
                 }
@@ -253,7 +254,9 @@ function subirProductos (){
     }; }
     cargarProductos()
 }
-
 subirProductos()
+
+
+
 
 
